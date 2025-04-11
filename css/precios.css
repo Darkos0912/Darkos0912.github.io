@@ -1,0 +1,183 @@
+/* Variables CSS (reutilizadas) */
+:root {
+    /*--primary-color: #ff5733;*/
+    --primary-color: #55ff33e7;
+    --secondary-color: #333;
+    --text-color: #fff;
+}
+
+/* Reset y Box Model (reutilizado) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar y Footer (reutilizados, no se repiten aquí) */
+
+/* Sección Precios */
+.pricing-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Toggle Mensual/Anual */
+.toggle-container {
+    margin: 2rem 0;
+}
+
+#toggle-plan {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 25px;
+    background: #ddd;
+    border-radius: 25px;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s;
+}
+
+#toggle-plan:checked + .toggle-label .toggle-switch {
+    background: var(--secondary-color);
+}
+
+#toggle-plan:checked + .toggle-label .toggle-switch::after {
+    transform: translateX(25px);
+}
+
+/* Tabla de Precios */
+.pricing-table {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+tbody tr {
+    transition: background 0.3s, transform 0.2s;
+}
+
+tbody tr:hover {
+    background: #f5f5f5; /* Efecto de resaltado */
+    transform: scale(1.02);
+}
+
+/* Precios Mensual/Anual */
+.price.monthly {
+    display: inline;
+}
+
+.price.annual {
+    display: none;
+}
+
+#toggle-plan:checked ~ .pricing-table .price.monthly {
+    display: none;
+}
+
+#toggle-plan:checked ~ .pricing-table .price.annual {
+    display: inline;
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>') no-repeat center;
+    background-size: contain;
+    cursor: help;
+}
+
+.tooltip::after {
+    content: attr(class) " " attr(data-tooltip);
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+td .tooltip::after {
+    content: attr(data-tooltip); /* Solo el texto del tooltip */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .pricing-table {
+        overflow-x: auto;
+    }
+    th, td {
+        min-width: 150px;
+    }
+}
+
+/* Modo Oscuro (reutilizado) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --secondary-color: #1a1a1a;
+        --text-color: #ddd;
+    }
+    tbody tr:hover {
+        background: #2a2a2a;
+    }
+    .toggle-switch {
+        background: #555;
+    }
+}

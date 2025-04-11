@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/entrenadores.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/images/logo.jpg" alt="Gym Bros Logo" class="logo-img">
+            <!--
+            <svg class="logo-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="5"/>
+            </svg>
+            -->
+        </div>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="Clases.html">Clases</a></li>
+            <li><a href="#">Entrenadores</a></li>
+            <li><a href="Precios.html">Precios</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+        </ul>
+    </nav>    
+
+    <!-- Sección de Entrenadores -->
+    <main class="entrenadores-page">
+        <section class="trainers-section">
+            <h1>Nuestros Entrenadores</h1>
+            <div class="trainers-grid">
+                <!-- Entrenador 1 -->
+                <div class="trainer-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="../assets/images/entrenador1.jpg" alt="Entrenador Juan">
+                            <h3>Juan Pérez</h3>
+                            <p>Especialista en Musculación</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Juan Pérez</h3>
+                            <div class="skills">
+                                <div class="skill">
+                                    <span>Fuerza</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill">
+                                    <span>Flexibilidad</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <span class="star" data-value="1"></span>
+                                <span class="star" data-value="2"></span>
+                                <span class="star" data-value="3"></span>
+                                <span class="star" data-value="4"></span>
+                                <span class="star" data-value="5"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Entrenador 2 -->
+                <div class="trainer-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="../assets/images/entrenador2.jpg" alt="Entrenadora María">
+                            <h3>María Gómez</h3>
+                            <p>Especialista en Yoga</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>María Gómez</h3>
+                            <div class="skills">
+                                <div class="skill">
+                                    <span>Fuerza</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 60%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill">
+                                    <span>Flexibilidad</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 95%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <span class="star" data-value="1"></span>
+                                <span class="star" data-value="2"></span>
+                                <span class="star" data-value="3"></span>
+                                <span class="star" data-value="4"></span>
+                                <span class="star" data-value="5"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (reutilizado) -->
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h3>Suscríbete</h3>
+                <form>
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><img src="../assets/images/facebook.png"alt=""></a>
+                <a href="#" target="_blank"><img src="../assets/images/instagram.png" alt=""></a>
+            </div>
+            <div class="map">
+                <iframe src="https://www.openstreetmap.org/export/embed.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/images/logo.jpg" alt="Gym Bros Logo" class="logo-img">
+            <!--
+            <svg class="logo-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="5"/>
+            </svg>
+            -->
+        </div>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="Clases.html">Clases</a></li>
+            <li><a href="Entrenadores.html">Entrenadores</a></li>
+            <li><a href="Precios.html">Precios</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </nav>   
+
+    <!-- Sección de Blog -->
+    <main class="blog-page">
+        <section class="blog-section">
+            <h1>Blog de Fitness</h1>
+            <!-- Sistema de Filtrado -->
+            <div class="filters">
+                <input type="radio" name="filter" id="all" checked>
+                <label for="all">Todos</label>
+                <input type="radio" name="filter" id="nutricion">
+                <label for="nutricion">Nutrición</label>
+                <input type="radio" name="filter" id="entrenamiento">
+                <label for="entrenamiento">Entrenamiento</label>
+                <input type="radio" name="filter" id="bienestar">
+                <label for="bienestar">Bienestar</label>
+            </div>
+
+            <!-- Diseño tipo Newspaper -->
+            <div class="blog-grid">
+                <article class="post" data-category="nutricion">
+                    <img src="../assets/images/nutricion.jpg" alt="Nutrición">
+                    <h2>5 Alimentos para Ganar Músculo</h2>
+                    <p>Descubre los mejores alimentos para potenciar tu entrenamiento...</p>
+                    <div class="tags">
+                        <span>Nutrición</span>
+                        <span>Musculación</span>
+                    </div>
+                    <!-- Sección de Comentarios -->
+                    <div class="comments">
+                        <div class="comment">
+                            <div class="avatar"></div>
+                            <p><strong>Juan</strong>: ¡Gran artículo!</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="post" data-category="entrenamiento">
+                    <img src="../assets/images/entrenamiento.jpg" alt="Entrenamiento">
+                    <h2>Rutina de CrossFit para Principiantes</h2>
+                    <p>Aprende los básicos de CrossFit con esta rutina sencilla...</p>
+                    <div class="tags">
+                        <span>Entrenamiento</span>
+                        <span>CrossFit</span>
+                    </div>
+                    <div class="comments">
+                        <div class="comment">
+                            <div class="avatar"></div>
+                            <p><strong>María</strong>: Muy útil, gracias.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="post" data-category="bienestar">
+                    <img src="../assets/images/bienestar.jpg" alt="Bienestar">
+                    <h2>Yoga para Reducir el Estrés</h2>
+                    <p>Relájate y mejora tu bienestar con estas posturas...</p>
+                    <div class="tags">
+                        <span>Bienestar</span>
+                        <span>Yoga</span>
+                    </div>
+                    <div class="comments">
+                        <div class="comment">
+                            <div class="avatar"></div>
+                            <p><strong>Lucía</strong>: Lo probaré hoy.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (reutilizado) -->
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h3>Suscríbete</h3>
+                <form>
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><img src="../assets/images/facebook.png"alt=""></a>
+                <a href="#" target="_blank"><img src="../assets/images/instagram.png" alt=""></a>
+            </div>
+            <div class="map">
+                <iframe src="https://www.openstreetmap.org/export/embed.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener('scroll', function() {
+        const posts = document.querySelectorAll('.post');
+        posts.forEach(post => {
+            const rect = post.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                post.classList.add('visible');
+            }
+        });
+    });
+</script>
+</html>

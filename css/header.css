@@ -1,0 +1,58 @@
+/* Navbar y Mega-Menú */
+.navbar {
+    background: var(--secondary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.dropdown:hover .mega-menu {
+    display: block;
+}
+
+.mega-menu {
+    display: none;
+    position: absolute;
+    background: var(--secondary-color);
+    list-style: none;
+    top: 100%;
+}
+
+.menu a:hover{
+    color: var(--primary-color)
+}
+
+/* Estilos para el nuevo logo */
+.logo-img {
+    width: 100px; /* Ajustado para que el logo no sea demasiado grande */
+    height: auto; /* Mantiene la proporción */
+    animation: spin 4s infinite linear; /* Mantiene la animación de rotación */
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        width: 80px; /* Tamaño más pequeño en móviles */
+    }
+}
+
+/*
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+*/

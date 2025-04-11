@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/precios.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/images/logo.jpg" alt="Gym Bros Logo" class="logo-img">
+        </div>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="Clases.html">Clases</a></li>
+            <li><a href="Entrenadores.html">Entrenadores</a></li>
+            <li><a href="#">Precios</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+        </ul>
+    </nav>   
+
+    <!-- Sección de Precios -->
+    <main class="precios-page">
+        <section class="pricing-section">
+            <h1>Nuestros Planes</h1>
+            <!-- Toggle Mensual/Anual -->
+            <div class="toggle-container">
+                <input type="checkbox" id="toggle-plan" name="toggle-plan">
+                <label for="toggle-plan" class="toggle-label">
+                    <span>Mensual</span>
+                    <span class="toggle-switch"></span>
+                    <span>Anual</span>
+                </label>
+            </div>
+
+            <!-- Tabla de Precios -->
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Precio</th>
+                            <th>Características</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Básico</td>
+                            <td>
+                                <span class="price monthly">$3000</span>
+                                <span class="price annual">$30000</span>
+                            </td>
+                            <td>
+                                Acceso a gimnasio
+                                <span class="tooltip">Incluye acceso ilimitado al área de pesas</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Intermedio</td>
+                            <td>
+                                <span class="price monthly">$5000</span>
+                                <span class="price annual">$50000</span>
+                            </td>
+                            <td>
+                                Acceso a gimnasio + 2 clases semanales
+                                <span class="tooltip">Elige entre Yoga, Spinning o Musculación</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Premium</td>
+                            <td>
+                                <span class="price monthly">$8000</span>
+                                <span class="price annual">$80000</span>
+                            </td>
+                            <td>
+                                Acceso completo + entrenador personal
+                                <span class="tooltip">Sesiones personalizadas 1 a 1</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (reutilizado) -->
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h3>Suscríbete</h3>
+                <form>
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><img src="../assets/images/facebook.png"alt=""></a>
+                <a href="#" target="_blank"><img src="../assets/images/instagram.png" alt=""></a>
+            </div>
+            <div class="map">
+                <iframe src="https://www.openstreetmap.org/export/embed.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

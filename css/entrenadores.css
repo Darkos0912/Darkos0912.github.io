@@ -1,0 +1,153 @@
+/* Variables CSS (reutilizadas) */
+:root {
+    /*--primary-color: #ff5733;*/
+    --primary-color: #55ff33e7;
+    --secondary-color: #333;
+    --text-color: #fff;
+}
+
+/* Reset y Box Model (reutilizado) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar y Footer (reutilizados, no se repiten aquí) */
+
+/* Sección Entrenadores */
+.trainers-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Tarjetas con Efecto Flip */
+.trainer-card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.trainer-card:hover .card-inner {
+    transform: rotateY(180deg); /* Efecto flip */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-front {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-back {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Barras de Habilidades Animadas */
+.skills {
+    width: 100%;
+}
+
+.skill {
+    margin: 0.5rem 0;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.skill-bar {
+    width: 100%;
+    background: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: var(--primary-color);
+    animation: fillBar 1.5s ease-in-out forwards;
+}
+
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: inherit; }
+}
+
+/* Sistema de Rating con Estrellas Animadas */
+.rating {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23ddd" stroke-width="2"><polygon points="12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8"/></svg>') no-repeat center;
+    background-size: contain;
+    transition: transform .3s;
+    filter: brightness(220%)
+}
+
+.trainer-card:hover .star:nth-child(-n+4) {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff5733"><polygon points="12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8"/></svg>') no-repeat center;
+    transform: scale(1.2); /* Animación al pasar el cursor */
+}
+
+/* Modo Oscuro (reutilizado) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --secondary-color: #1a1a1a;
+        --text-color: #ddd;
+    }
+    .card-front {
+        background: #2a2a2a;
+    }
+    .skill-bar {
+        background: #555;
+    }
+}
